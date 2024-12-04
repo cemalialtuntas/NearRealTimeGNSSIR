@@ -14,7 +14,7 @@ We welcome contributions from the GNSS-IR community! Whether you're interested i
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. This ensures that the software remains free and open-source, while requiring attribution for any modifications or derivative works.
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
 
 For commercial use, please contact us for additional details.
 
