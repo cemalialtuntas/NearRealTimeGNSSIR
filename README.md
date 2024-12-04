@@ -7,6 +7,7 @@ NearRealTimeGNSSIR is an open-source project dedicated to the development of a N
 - Extraction of environmental parameters (e.g., sea level, snow depth, soil moisture) from GNSS signal-to-noise ratio data.
 - Near real-time data processing for accurate and near real-time results.
 - Open-source contributions welcome to expand capabilities and improve performance.
+- Integration with BKG Ntrip Client (BNC) for real-time data retrieval in the initial stages. Future versions may embed this functionality directly within the software.
 
 ## Contributing
 
