@@ -24,7 +24,7 @@ To get started, clone this repository and check the available documentation:
 
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/NearRealTimeGNSSIR.git
+git clone https://github.com/cemalialtuntas/NearRealTimeGNSSIR.git
 ```
 
 ## Contact
