@@ -2,6 +2,7 @@
 
 NearRealTimeGNSSIR is an open-source project dedicated to the development of a Near Real-Time GNSS Interferometric Reflectometry (GNSS-IR) software. This tool aims to utilize the potential of GNSS-IR technology to extract critical environmental parameters, such as sea level, snow depth, soil moisture, in near real time. By using GNSS signal-to-noise ratio data, we aim to facilitate efficient and timely environmental monitoring, supporting scientific research and practical applications.
 
+## UI Template (draft)
 ![nrtgnssir_ui_template](https://github.com/user-attachments/assets/7c44d1d6-af5d-460d-afec-0c88ffcb542f)
 
 
