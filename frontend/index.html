@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Near Real Time GNSS-IR Analysis Software</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Near Real Time GNSS-IR Analysis Software</h1>
+        
+        <!-- Data Section -->
+        <div class="data-section">
+            <h2>Data</h2>
+            <div class="input-group">
+                <label for="obs-dir">Observation file directory:</label>
+                <input type="text" id="obs-dir" name="obs-dir">
+                <button type="button" onclick="selectDirectory('obs-dir')">Browse</button>
+            </div>
+            
+            <div class="input-group">
+                <label for="orbit-path">Orbit product file path:</label>
+                <input type="text" id="orbit-path" name="orbit-path">
+                <button type="button" onclick="selectDirectory('orbit-path')">Browse</button>
+            </div>
+
+            <div class="input-group">
+                <label>Receiver approximate position (m):</label>
+                <div class="coordinates">
+                    <label for="x">X:</label><input type="text" id="x" name="x" value="0.0000">
+                    <label for="y">Y:</label><input type="text" id="y" name="y" value="0.0000">
+                    <label for="z">Z:</label><input type="text" id="z" name="z" value="0.0000">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Satellite system:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="sat-system" value="G" checked> G</label>
+                    <label><input type="checkbox" name="sat-system" value="R" checked> R</label>
+                    <label><input type="checkbox" name="sat-system" value="E" checked> E</label>
+                    <label><input type="checkbox" name="sat-system" value="C"> C</label>
+                    <label><input type="checkbox" name="sat-system" value="I"> I</label>
+                    <label><input type="checkbox" name="sat-system" value="J"> J</label>
+                    <label><input type="checkbox" name="sat-system" value="S"> S</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Angle masks (deg):</label>
+                <div class="angle-inputs">
+                    <label for="elevation">Elevation:</label><input type="text" id="elevation" name="elevation" value="5-25">
+                    <label for="azimuth">Azimuth:</label><input type="text" id="azimuth" name="azimuth" value="0-30;130-240">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <button type="button" id="run-button" onclick="runAnalysis()">RUN</button>
+            </div>
+        </div>
+
+        <!-- Analysis Section -->
+        <div class="analysis-section">
+            <h2>Analysis</h2>
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'Monitoring')">Monitoring Dashboard</button>
+                <button class="tab-button" onclick="openTab(event, 'Processing')">Processing Options</button>
+            </div>
+
+            <div id="Monitoring" class="tab-content active">
+                <div class="input-group">
+                    <label for="monitoring-start">Monitoring start:</label>
+                    <input type="text" id="monitoring-start" placeholder="YYYY:MM:DD HH:MM:SS">
+                </div>
+
+                <div class="input-group">
+                    <label for="last-update">Last update:</label>
+                    <input type="text" id="last-update" placeholder="YYYY:MM:DD HH:MM:SS">
+                </div>
+
+                <div class="input-group">
+                    <label>Satellite:</label>
+                    <select multiple>
+                        <option>G01</option>
+                        <option>G02</option>
+                        <option>G03</option>
+                        <option>G04</option>
+                        <option>G05</option>
+                        <option>R01</option>
+                        <option>R02</option>
+                        <option>R03</option>
+                        <option>R04</option>
+                        <option>R05</option>
+                        <option>E01</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Signal:</label>
+                    <select multiple>
+                        <option>S1C</option>
+                        <option>S2C</option>
+                    </select>
+                </div>
+
+                <div class="data-plot">
+                    <h3>Data</h3>
+                    <div id="data-plot-placeholder">
+                        <!-- Plot goes here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Log Section -->
+        <div class="log-section">
+            <h2>Log</h2>
+            <textarea id="log" rows="5" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
